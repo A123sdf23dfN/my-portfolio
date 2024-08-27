@@ -1,0 +1,51 @@
+/* Contact Section */
+.section-contact {
+    padding: 40px;
+    background-color: #222;
+    color: #fff;
+    text-align: center;
+    font-family: "Playfair Display", serif;
+}
+
+.section-contact h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    font-family: "Playfair Display", serif;
+}
+
+.contact-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: "Playfair Display", serif;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+    color: #fff;
+    font-family: "Playfair Display", serif;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+.social-link i {
+    margin-right: 10px;
+    font-size: 1.5rem;
+    /* Adjust size if needed */
+}
+
+.social-link:hover {
+    color: #00ff75;
+    /* Change to your preferred hover color */
+}
+
+footer p {
+    text-align: center;
+    padding: 20px;
+    background-color: #111;
+    color: #fff;
+    margin: 0;
+}

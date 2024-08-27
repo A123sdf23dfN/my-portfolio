@@ -1,0 +1,355 @@
+body {
+    margin: 0;
+    background: #000;
+    color: #f0f8ff;
+    font-family: "Dancing Script", cursive;
+    overflow-x: hidden;
+}
+
+canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* Navbar */
+.navbar {
+    padding: 0;
+    font-family: "Edu VIC WA NT Beginner", cursive;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.navbar nav {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+    margin-top: 54px;
+}
+
+/* Toggle button (hamburger icon) */
+.toggle-btn {
+    display: none;
+    background: none;
+    border: none;
+    color: purple;
+    font-size: 24px;
+    cursor: pointer;
+    position: absolute;
+    top: 46px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.left h1 {
+    font-size: 3.5rem;
+    margin-top: 16px;
+    background: linear-gradient(145deg, skyblue, blue);
+    -webkit-background-clip: text;
+    color: transparent;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.nav-link {
+    color: #ffc600;
+    text-decoration: none;
+    margin: 20px 20px;
+    font-family: "Edu VIC WA NT Beginner", cursive;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: color 0.3s ease, transform 0.3s ease, text-decoration 0.3s ease;
+    position: relative;
+}
+
+.nav-link::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #ff00b7;
+    transition: width 0.3s;
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.nav-link:hover {
+    color: #ff4500;
+    transform: scale(1.1);
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.toggle-btn .fa-times {
+    color: red;
+}
+
+.toggle-btn .fa-bars {
+    color: purple;
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #ffadad;
+    background-attachment: fixed;
+    padding: 0 20px;
+    opacity: 0;
+    animation: fadeIn 3s forwards;
+}
+
+.hero span {
+    font-size: 4.5rem;
+    margin: 0;
+    background: linear-gradient(145deg, blue, rgba(173, 216, 230, 0.8), purple, #ff00b7);
+    -webkit-background-clip: text;
+    color: transparent;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.hero h1 {
+    font-size: 4.5rem;
+    margin: 0;
+    background: linear-gradient(145deg, skyblue, blue);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.hero h2 {
+    font-size: 2.5rem;
+    margin: 20px 0 0;
+    font-family: "Edu VIC WA NT Beginner", cursive;
+    white-space: nowrap;
+    color: #ffc600;
+    overflow: hidden;
+    border-right: 3px solid #ffc600;
+    width: 0;
+    animation: typing 4s steps(30, end) infinite, blink 0.75s step-end infinite;
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 28%;
+    }
+}
+
+@keyframes blink {
+    0% {
+        border-color: transparent;
+    }
+
+    50% {
+        border-color: #ffc600;
+    }
+
+    100% {
+        border-color: transparent;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-100px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* About Section */
+.border-container-a {
+    background-image: linear-gradient(163deg, #00ff75 0%, #3700ff 100%);
+    border-radius: 20px;
+    transition: all 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+    margin: auto;
+    height: 600px;
+}
+
+#about {
+    width: 95%;
+    height: 92%;
+    position: relative;
+    color: #00ff75;
+    padding: 20px;
+    border-radius: 20px;
+    margin: auto;
+    background-color: #000;
+    transition: all 0.2s;
+}
+
+#about h2 {
+    color: #ffadad;
+    text-align: center;
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+}
+
+#about div {
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 2;
+    font-size: 18px;
+}
+
+/* Contact Section */
+.section-contact {
+    padding: 10px 10px;
+    margin-top: 20px;
+    text-align: center;
+    margin: auto;
+    margin-top: 134px;
+    width: 600px;
+    opacity: 0;
+    animation: fadeInUp 1.5s forwards;
+    border: none;
+    font-family: "Oswald", sans-serif;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    background: transparent;
+    color: #ffffff;
+    transition: background 0.5s ease, box-shadow 0.5s ease;
+}
+
+.section-contact h2 {
+    color: #ffadad;
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.contact-links {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffc600;
+    text-decoration: none;
+    font-size: 2.5rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-link:hover {
+    color: #ffdd57;
+    transform: scale(1.15);
+}
+
+/* Footer */
+footer {
+    padding: 20px 0;
+    text-align: center;
+    color: #f0f8ff;
+    background: rgba(0, 0, 0, 0.7);
+    font-family: "Oswald", sans-serif;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.5);
+}
+
+footer p {
+    margin: 0;
+}
+
+span {
+    margin-left: 14px;
+}
+
+/* Responsive Media Queries */
+@media (max-width: 768px) {
+    .right {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        margin-right: 46px !important;
+    }
+
+    .nav-link {
+        justify-content: center;
+    }
+
+    .right.active {
+        display: flex;
+        justify-content: center;
+    }
+
+    .toggle-btn {
+        display: block;
+        position: absolute;
+        top: 53px;
+        right: 15px;
+        background: none;
+        border: none;
+        color: purple;
+        font-size: 24px;
+        cursor: pointer;
+        z-index: 1000;
+    }
+
+    .left h1 {
+        font-size: 2rem;
+        margin-top: 15px;
+        margin-left: 20px;
+    }
+
+    .section-skills {
+        padding: 20px 20px;
+        text-align: center;
+        margin: auto;
+        width: 290px !important;
+        opacity: 0;
+        animation: fadeInUp 1.5s forwards;
+        font-family: "Dancing Script", cursive;
+    }
+}
