@@ -327,7 +327,7 @@ span {
     .toggle-btn {
         display: block;
         position: absolute;
-        top: 56px;
+        top: 53px;
         right: 15px;
         background: none;
         border: none;
@@ -351,5 +351,37 @@ span {
         opacity: 0;
         animation: fadeInUp 1.5s forwards;
         font-family: "Dancing Script", cursive;
+    }
+
+    .hero h2 {
+
+        /* Adjust font size for smaller screens */
+        width: 100%;
+        animation: typing 4s steps(30, end) infinite, blink 0.75s step-end infinite;
+        /* Adjust width to fit within mobile screens */
+    }
+
+    @keyframes typing {
+        from {
+            width: 0;
+        }
+
+        to {
+            width: 50%;
+        }
+    }
+
+    @keyframes blink {
+        0% {
+            border-color: transparent;
+        }
+
+        50% {
+            border-color: #ffc600;
+        }
+
+        100% {
+            border-color: transparent;
+        }
     }
 }
